@@ -11,7 +11,7 @@ namespace FESBet.Data
 {
     public class DevelopmentDatabaseInitializer : DropCreateDatabaseAlways<FESBetContext>
     {
-        public override void InitializeDatabase(FESBetContext context)
+        public new void InitializeDatabase(FESBetContext context)
         {
             context.Database.CreateIfNotExists();
             // Prevents “Cannot drop database because it is currently in use” error.
