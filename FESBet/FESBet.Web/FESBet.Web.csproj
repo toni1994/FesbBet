@@ -89,6 +89,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -107,9 +111,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
@@ -187,11 +188,33 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Icon.ico" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\App\app.module.js" />
+    <Content Include="Scripts\App\app.config.js" />
+    <Content Include="Scripts\App\Home\home.controller.js" />
+    <Content Include="Scripts\App\Home\Home.html" />
+    <Content Include="Scripts\App\Home\home.state.js" />
+    <Content Include="Scripts\App\Registration\registration.controller.js" />
+    <Content Include="Scripts\App\Registration\registration.template.html" />
+    <Content Include="Scripts\App\Services\mainService.js" />
+    <Content Include="Scripts\App\Sign-In\sign-in.controller.js" />
+    <Content Include="Scripts\App\Sign-In\sign-in.state.js" />
+    <Content Include="Scripts\App\Sign-In\sign-in.template.html" />
+    <Content Include="Scripts\Vendor\angular-message-format.js" />
+    <Content Include="Scripts\Vendor\angular-message-format.min.js" />
+    <Content Include="Scripts\Vendor\angular-messages.js" />
+    <Content Include="Scripts\Vendor\angular-messages.min.js" />
+    <Content Include="Scripts\Vendor\angular-ui-router.js" />
+    <Content Include="Scripts\Vendor\angular-ui-router.min.js" />
+    <Content Include="Scripts\Vendor\angular.js" />
+    <Content Include="Scripts\Vendor\angular.min.js" />
+    <Content Include="Scripts\Vendor\underscore.js" />
+    <Content Include="Scripts\Vendor\underscore.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -208,12 +231,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\App\" />
-    <Folder Include="Scripts\Vendor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+    <Content Include="Scripts\App\Registration\registration.state.js" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FESBet.Data\FESBet.Data.csproj">

@@ -1,0 +1,30 @@
+﻿<div>
+    <h1>Registration</h1>
+    <form name="registartion">
+        <fieldset>
+            <label>First name:</label>
+            <input name="firstName" ng-model="firstName" type="text" placeholder="Enter your first name">
+            <br />
+            <label>Last name:</label>
+            <input name="lastName" ng-model="lastName" type="text" placeholder="Enter your last name">
+            <br />
+            <label>Birth:</label>
+            <input name="birth" ng-model="birth" type="date" placeholder="Enter your date of birth">
+            <br />
+            <label>Username:</label>
+            <input name="username " ng-model="username" type="text" placeholder="Enter your username">
+            <br />
+            <label>E-mail:</label>
+            <input name="e-mail"  ng-model="username" type="email" placeholder="Enter your e-mail">
+            <br />
+            <label>Password:</label>
+            <input name="password" ng-model="password" type="password" placeholder="Enter your password">
+            <br />
+            <label>Confirm password:</label>
+            <input name="password_confirm" ng-model="password2" type="password" placeholder="Confirm your password">
+            <br />
+            <button type="submit" ng-disabled="submitReady">Sign up</button>
+            <button type="button">Cancel</button>
+        </fieldset>
+    </form>
+</div>

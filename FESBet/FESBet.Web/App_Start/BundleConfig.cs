@@ -23,6 +23,26 @@ namespace FESBet.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
+                         "~/Scripts/Vendor/angular.min.js",
+                         "~/Scripts/Vendor/angular-ui-router.min.js",
+                         "~/Scripts/Vendor/underscore.min.js",
+                         "~/Scripts/Vendor/angular-messages.min.js",
+
+                         "~/Scripts/App/app.module.js",
+                         "~/Scripts/App/app.config.js",
+
+                         "~/Scripts/App/Home/home.controller.js",
+                          "~/Scripts/App/Home/home.state.js",
+
+                         "~/Scripts/App/Registration/registration.controller.js",
+                         "~/Scripts/App/Registration/registration.state.js",
+
+                         "~/Scripts/App/Sign-In/sign-in.controller.js",
+                         "~/Scripts/App/Sign-In/sign-in.state.js",
+
+                         "~/Scripts/App/Service/mainService.js"));
         }
     }
 }
