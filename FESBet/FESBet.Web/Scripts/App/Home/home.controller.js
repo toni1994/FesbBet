@@ -4,8 +4,7 @@
     angular.module('app')
         .controller("HomeController", HomeController);
 
-    HomeController.$inject = ["mainService", "$state"];
-    function HomeController(mainService, $state) {
+    HomeController.$inject = ["$state"];
+    function HomeController($state) {
     }
-}
-)();
+})();

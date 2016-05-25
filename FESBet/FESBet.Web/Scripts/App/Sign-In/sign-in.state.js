@@ -1,8 +1,11 @@
-﻿(function ()
-{
+﻿(function (){
     'use strict';
-    angular.module("app").config("SignInStateConfig");
+
+    angular.module("app")
+        .config("SignInStateConfig");
+
     SignInStateConfig.$inject = ["$stateProvider"];
+
     function SignInStateConfig($stateProvider)
     {
         $stateProvider.state('registration', {

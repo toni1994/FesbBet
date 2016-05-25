@@ -1,7 +1,10 @@
 ﻿(function () {
     'use strict';
-    angular.module('app').config("HomeConfig");
+
+    angular.module('app').config(HomeConfig);
+
     HomeConfig.$inject = ["$stateProvider"];
+
     function HomeConfig($stateProvider) {
         $stateProvider.state('home', {
             url: '/',
@@ -9,5 +12,4 @@
             controller: "HomeController"
         });
     }
-}
-)();
+})();

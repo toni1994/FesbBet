@@ -34,15 +34,17 @@ namespace FESBet.Web
                          "~/Scripts/App/app.config.js",
 
                          "~/Scripts/App/Home/home.controller.js",
-                          "~/Scripts/App/Home/home.state.js",
+                          "~/Scripts/App/Home/home.state.js"
 
-                         "~/Scripts/App/Registration/registration.controller.js",
-                         "~/Scripts/App/Registration/registration.state.js",
+                         //"~/Scripts/App/Registration/registration.controller.js",
+                         //"~/Scripts/App/Registration/registration.state.js",
 
-                         "~/Scripts/App/Sign-In/sign-in.controller.js",
-                         "~/Scripts/App/Sign-In/sign-in.state.js",
+                         //"~/Scripts/App/Sign-In/sign-in.controller.js",
+                         //"~/Scripts/App/Sign-In/sign-in.state.js",
 
-                         "~/Scripts/App/Service/mainService.js"));
+                         //"~/Scripts/App/Service/mainService.js"
+                         
+                         ));
         }
     }
 }
