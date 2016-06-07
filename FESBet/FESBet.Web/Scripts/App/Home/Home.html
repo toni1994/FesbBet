@@ -3,9 +3,10 @@
     <div>
         <div>
             <uib-carousel active="active" interval="interval" no-wrap="noWrapSlides">
-                <uib-slide ng-repeat="slide in slides">
+                <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
                     <img ng-src="{{slide.image}}" style="margin:auto;">
                     <div class="carousel-caption">
+                        <h4>{{slide.name}}</h4>
                     </div>
                 </uib-slide>
             </uib-carousel>

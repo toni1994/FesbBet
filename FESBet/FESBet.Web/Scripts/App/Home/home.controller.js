@@ -47,19 +47,29 @@
         var currIndex = 0;
         $scope.slides = [
           {
-              image: '/Content/Pictures/Football.jpg'
+              image: '/Content/Pictures/Football.jpg',
+              id: 0,
+              name: "Football"
           },
           {
-              image: '/Content/Pictures/Handball.jpg'
+              image: '/Content/Pictures/Handball.jpg',
+              id: 1,
+              name: "Handball"
           },
           {
-              image: '/Content/Pictures/Basketball.jpg'
+              image: '/Content/Pictures/Basketball.jpg',
+              id: 2,
+              name: "Basketball"
           },
           {
-              image: '/Content/Pictures/Tennis.jpg'
+              image: '/Content/Pictures/Tennis.jpg',
+              id: 3,
+              name: "Tennis"
           },
           {
-              image: '/Content/Pictures/Waterpolo.jpg'
+              image: '/Content/Pictures/Waterpolo.jpg',
+              id: 4,
+              name: "Waterpolo"
           }
         ];
     }
