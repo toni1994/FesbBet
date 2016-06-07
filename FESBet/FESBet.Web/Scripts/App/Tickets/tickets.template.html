@@ -1,0 +1,23 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Tickets</h2>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="thumbnail">
+                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                <div class="caption">
+                   <p><strong>PIN:</strong> {{pin}}</p>
+                   <p><strong>DATA:</strong> {{data}}</p>
+                   <hr id="tickets" />
+                    <div>
+                        <p><strong>STATUS:</strong> {{status}} </p>
+                        <i class="fa fa-times fa-3x" ng-show="showLose"></i>
+                        <i class="fa fa-check fa-3x" ng-show="showWin"></i>
+                        <i class="fa fa-spinner fa-3x" ng-show="showWaiting"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

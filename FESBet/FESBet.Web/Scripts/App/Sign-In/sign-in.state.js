@@ -2,14 +2,14 @@
     'use strict';
 
     angular.module("app")
-        .config("SignInStateConfig");
+        .config(SignInStateConfig);
 
     SignInStateConfig.$inject = ["$stateProvider"];
 
     function SignInStateConfig($stateProvider)
     {
-        $stateProvider.state('registration', {
-            url: '/registration',
+        $stateProvider.state('sign-in', {
+            url: '/sign-in',
             templateUrl: "./Scripts/App/Sign-In/sign-in.template.html",
             controller: "SignInController"
         });

@@ -1,30 +1,30 @@
 ﻿<div>
-    <h1>Registration</h1>
-    <form name="registartion">
-        <fieldset>
-            <label>First name:</label>
-            <input name="firstName" ng-model="firstName" type="text" placeholder="Enter your first name">
-            <br />
-            <label>Last name:</label>
-            <input name="lastName" ng-model="lastName" type="text" placeholder="Enter your last name">
-            <br />
-            <label>Birth:</label>
-            <input name="birth" ng-model="birth" type="date" placeholder="Enter your date of birth">
-            <br />
-            <label>Username:</label>
-            <input name="username " ng-model="username" type="text" placeholder="Enter your username">
-            <br />
-            <label>E-mail:</label>
-            <input name="e-mail"  ng-model="username" type="email" placeholder="Enter your e-mail">
-            <br />
-            <label>Password:</label>
-            <input name="password" ng-model="password" type="password" placeholder="Enter your password">
-            <br />
-            <label>Confirm password:</label>
-            <input name="password_confirm" ng-model="password2" type="password" placeholder="Confirm your password">
-            <br />
-            <button type="submit" ng-disabled="submitReady">Sign up</button>
-            <button type="button">Cancel</button>
-        </fieldset>
-    </form>
+    <div class="container">
+            <form class="form-registration">
+                <h2 class="form-registration">Registration</h2>
+                <label for="firstname">FirtsName:</label>
+                <input type="text" id="firstname" class="form-control" ng-model="firstName" placeholder="Enter your first name" required autofocus>
+                <br />
+                <label for="lastname">LastName:</label>
+                <input type="text" id="lastname" class="form-control" ng-model="lastName" placeholder="Enter your last name" required autofocus>
+                <br />
+                <label for="data">Birth:</label>
+                <input type="date" id="data" class="form-control" ng-model="birth" placeholder="Enter your date of birth" required autofocus>
+                <br />
+                <label for="username">Username:</label>
+                <input type="text" id="username" class="form-control" ng-model="username" placeholder="Enter your username" required autofocus>
+                <br />
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="form-control" ng-model="email" placeholder="Enter your e-mail" required autofocus>
+                <br />
+                <label for="inputPassword">Password:</label>
+                <input type="password" id="inputPassword" class="form-control" ng-model="password" placeholder="Password" required>
+                <br />
+                <label for="inputPassword2">Confirm Password:</label>
+                <input type="password" id="inputPassword2" class="form-control" ng-model="password2" placeholder="Password" required>
+                <br />
+                <button class="btn btn-primary" type="submit" ng-disabled="submitReady">Sign up</button>
+                <button class="btn btn-primary" type="button">Cancel</button>
+            </form>    
+   </div>
 </div>

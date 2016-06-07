@@ -22,25 +22,28 @@ namespace FESBet.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css",
+                      "~/Content/font-awesomecss"));
 
             bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
                          "~/Scripts/Vendor/angular.min.js",
                          "~/Scripts/Vendor/angular-ui-router.min.js",
                          "~/Scripts/Vendor/underscore.min.js",
                          "~/Scripts/Vendor/angular-messages.min.js",
+                         "~/Scripts/Vendor/ui-bootstrap-tpls-1.3.3.min.js",
+                         "~/Scripts/Vendor/angular-animate.min.js",
 
                          "~/Scripts/App/app.module.js",
                          "~/Scripts/App/app.config.js",
 
                          "~/Scripts/App/Home/home.controller.js",
-                          "~/Scripts/App/Home/home.state.js"
+                          "~/Scripts/App/Home/home.state.js",
 
-                         //"~/Scripts/App/Registration/registration.controller.js",
-                         //"~/Scripts/App/Registration/registration.state.js",
+                         "~/Scripts/App/Registration/registration.controller.js",
+                         "~/Scripts/App/Registration/registration.state.js",
 
-                         //"~/Scripts/App/Sign-In/sign-in.controller.js",
-                         //"~/Scripts/App/Sign-In/sign-in.state.js",
+                         "~/Scripts/App/Sign-In/sign-in.controller.js",
+                         "~/Scripts/App/Sign-In/sign-in.state.js"
 
                          //"~/Scripts/App/Service/mainService.js"
                          
