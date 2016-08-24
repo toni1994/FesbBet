@@ -3,8 +3,8 @@
 
     angular.module("app").controller('SignInController', SignInController);
 
-    SignInController.$inject = ["$state"];
-    function SignInController($state) {
+    SignInController.$inject = ["$state","$scope"];
+    function SignInController($state,$scope) {
 
     }
 }

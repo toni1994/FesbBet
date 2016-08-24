@@ -19,23 +19,16 @@ body nav
 {
     background-color:lightblue;
 }
-.navbar 
-{
-    margin-bottom:0px;
-}
 
 .navbar-inverse .navbar-nav > li > a {
-    font-size:20px;
+    font-size:24px;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover {
-    text-decoration-color:red;
-    background-color:aqua;
-}
 .navbar-inverse .navbar-brand {
       font-size:20px;
-      cursor:default;
+      cursor:default;     
 }
+
 .footer-distributed{
 	background-color: #292c2f;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -214,3 +207,130 @@ body nav
    margin-top:0px;
 }
 
+
+.modal-dialog {
+    position:center;
+    left:unset;
+}
+
+#image_ticket{
+    cursor:pointer;
+}
+
+#body_ticket{
+    font-size:20px;
+    text-align:center;
+    word-spacing:50px;
+}
+
+.modal-header
+{
+    background-color:deepskyblue;
+}
+
+#ticket-header {
+    margin-bottom:20px;
+}
+
+#navbarLogin{
+    margin-bottom:1px;
+}
+
+#navbar{
+    margin-bottom:1px;
+    padding:12px 0;
+}
+
+
+#profile{
+    margin-top:10px;
+}
+
+#days{
+    text-align: center;
+}
+
+#botton-bet{
+    margin-top: -15px;
+
+}
+
+#top-bet{
+    margin-top: 2px;
+
+}
+
+.header-top-table
+{
+    background-color:Highlight;
+}
+
+.body-table
+{
+    background-color:#fff9b6;
+}
+
+#bet-ticket
+{
+    margin-left: 15px;
+}
+
+#bet-day
+{
+    margin-left: 10px;
+}
+
+
+#bet-time
+{
+    margin-left: 5px;
+}
+
+#bet-odd
+{
+    margin-left: 4px;
+}
+
+.days{
+    cursor:pointer;
+}
+
+.days:hover{
+    text-decoration:underline;
+}
+
+#firstDay{
+    margin-left:20px
+}
+
+.TakeMatch
+{
+    cursor:pointer;
+}
+
+.TakeMatch:hover
+{
+      background-color:Highlight;
+}
+
+
+#submitButton
+{
+    float:left;
+}
+
+
+.list-group-item
+{
+    cursor:pointer;
+}
+
+#ticketCurrent{
+    position:fixed;
+}
+
+.UserMoney
+{
+    color:white;
+    font-size:18px;
+}

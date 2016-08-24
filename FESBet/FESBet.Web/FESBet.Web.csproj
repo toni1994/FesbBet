@@ -190,10 +190,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Pictures\Football.jpg" />
+    <Content Include="Content\Pictures\profileMan.jpg" />
     <Content Include="Fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Icon.ico" />
     <Content Include="Content\Pictures\Basketball.jpg" />
-    <Content Include="Content\Pictures\Football.jpg" />
     <Content Include="Content\Pictures\Handball.jpg" />
     <Content Include="Content\Pictures\Tennis.jpg" />
     <Content Include="Content\Pictures\Waterpolo.jpg" />
@@ -204,12 +205,13 @@
     </Content>
     <Content Include="Scripts\App\app.module.js" />
     <Content Include="Scripts\App\app.config.js" />
-    <Content Include="Scripts\App\Bet\Bet.contorller.js" />
+    <Content Include="Scripts\App\Bet\Bet.controller.js" />
     <Content Include="Scripts\App\Bet\Bet.state.js" />
     <Content Include="Scripts\App\Bet\bet.template.html" />
     <Content Include="Scripts\App\Home\home.controller.js" />
     <Content Include="Scripts\App\Home\Home.html" />
     <Content Include="Scripts\App\Home\home.state.js" />
+    <Content Include="Scripts\App\Profil\ChangePassword.html" />
     <Content Include="Scripts\App\Profil\Profil.controller.js" />
     <Content Include="Scripts\App\Profil\Profil.state.js" />
     <Content Include="Scripts\App\Profil\profil.template.html" />

@@ -1,3 +1,150 @@
-﻿<div>
-    Test bet
+﻿<script type="text/ng-template" id="currentTicket.html">
+    <div class="modal-header">
+        <h3 class="modal-title"><strong>Ticket PIN:</strong>0000</h3>
+    </div>
+    <div class="modal-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Opponents</th>
+                    <th>Data</th>
+                    <th>Day-Time</th>
+                    <th>Bet</th>
+                    <th>Odd</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="match in ticket">
+                <tr>
+                    <td>{{match.id}}</td>
+                    <td>{{match.name}}</td>
+                    <td>{{match.data}}</td>
+                    <td>{{match.day}} - {{match.time}}</td>
+                    <td>{{match.bet}}</td>
+                    <td>{{match.odd}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p id="body_ticket"><strong>PAYIN:{{stake}}</strong> <strong>TOTAL-ODD:{{odd}}</strong> <strong>WIN:{{win}}</strong></p>
+    </div>
+    <div class="modal-footer">
+            <button class="btn btn-success" id="submitButton" type="button" ng-click="submit()">Submit</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+
+
+
+
+
+
+<div class="container">
+    <div class="row" id="top-bet">
+        <div class="col-md-2"><h4 id="days">Days</h4></div>
+            <ol class="breadcrumb">
+                <li class="days" id="firstDay" ng-click="filterMon()">MON</li>
+                <li class="days" ng-click="filterTue()">TUE</li>
+                <li class="days" ng-click="filterWen()">WEN</li>
+                <li class="days" ng-click="filterThu()">THU</li>
+                <li class="days" ng-click="filterFri()">FRI</li>
+                <li class="days" ng-click="filterSat()">SAT</li>
+                <li class="days" ng-click="filterSun()">SAN</li>
+            </ol>
+        </div>
+    <div class="row" id="botton-bet">
+        <!-- Sidebar Column -->
+        <div class="col-md-2">
+            <div class="list-group">
+                <a class="list-group-item" ng-click="chooseSport('All')">All</a>
+                <a class="list-group-item" ng-click="chooseSport('Football')">Football</a>
+                <a class="list-group-item" ng-click="chooseSport('Tennis')">Tennis</a>
+                <a class="list-group-item" ng-click="chooseSport('Basketball')">Basketball</a>
+                <a class="list-group-item" ng-click="chooseSport('Handball')">Handball</a>
+                <a class="list-group-item" ng-click="chooseSport('Waterpolo')">Waterpolo</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="table-responsive" ng-repeat="sport in allSport.sport | filter:{type:choosen}">
+                <table class="table">
+                    <thead>
+                        <tr class="header-top-table">
+                            <th>{{sport.type}}</th>
+                            <th>{{sport.name}}</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>Teams</th>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>1</th>
+                            <th>X</th>
+                            <th>2</th>
+                            <th>1X</th>
+                            <th>X2</th>
+                            <th>F+2</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="match in sport.matches | filter:{day:dayFilter}">
+                        <tr class="body-table">
+                            <td>{{match.teams}}</td>
+                            <td>{{match.day}}</td>
+                            <td>{{match.time}}</td>
+                            <td class="TakeMatch" ng-click="takeMatch(match.teams,match.day,match.time,match.w1,1,match.id,match.data)">{{match.w1}}</td>
+                            <td class="TakeMatch" ng-click="takeMatch(match.teams,match.day,match.time,match.w2,2,match.id,match.data)">{{match.w2}}</td>
+                            <td class="TakeMatch" ng-click="takeMatch(match.teams,match.day,match.time,match.wX,'X',match.id,match.data)">{{match.wX}}</td>
+                            <td class="TakeMatch" ng-click="takeMatch(match.teams,match.day,match.time,match.w1X,'1X',match.id,match.data)">{{match.w1X}}</td>
+                            <td class="TakeMatch" ng-click="takeMatch(match.teams,match.day,match.time,match.wX2,'X2',match.id,match.data)">{{match.wX2}}</td>
+                            <td class="TakeMatch" ng-click="takeMatch(match.teams,match.day,match.time,match.wF2,'F2',match.id,match.data)">{{match.wF2}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+         </div>
+        <div class="col-md-4">
+            <div class="panel panel-default" id="ticketCurrent">
+                <div class="panel-heading">
+                    <i class="fa fa-shopping-cart fa-fw"></i> New ticket
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="list-group" ng-repeat="ticket in container.ticket">
+                        <a href="#" class="list-group-item">
+                            <span>{{ticket.name}} </span>
+                            <span id="bet-day">{{ticket.day}}</span>
+                            <span id="bet-time">({{ticket.time}})</span>
+                            <span id="bet-ticket">{{ticket.bet}}</span>
+                            <span id="bet-odd"><strong>{{ticket.odd}}</strong></span>
+                            <span class="pull-right text-muted small">                               
+                                <i class="fa fa-times fa-2x" ng-click="deleteMatch(ticket.id)" aria-hidden="true"></i>
+                            </span> 
+                        </a>
+                    </div>
+                    <!-- /.list-group -->
+                    <div>
+                        <p class="pull-left text-muted small">
+                            ODD:<strong> {{odd}} </strong>
+                        </p>
+                        <p class="pull-right text-muted small">
+                            WIN:<strong> {{stake*odd}} HRK</strong>
+                        </p>
+                    </div>
+                    <div class="form-group">               
+                        <input type="number" min="1" ng-model="stake" class="form-control" placeholder="Enter your stake">
+                    </div>
+                    
+                    <div>
+                        <a href="#" class="btn btn-default btn-block" ng-click="open('lg',win,stake,odd)">View a ticket</a>
+                    </div>   
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+    </div>
 </div>

@@ -34,7 +34,7 @@
     <script src="~/Scripts/App/Rules/Rules.state.js"></script>
     <script src="~/Scripts/App/Questions/Questions.controller.js"></script>
     <script src="~/Scripts/App/Questions/Questions.state.js"></script>
-    <script src="~/Scripts/App/Bet/Bet.contorller.js"></script>
+    <script src="~/Scripts/App/Bet/Bet.controller.js"></script>
     <script src="~/Scripts/App/Bet/Bet.state.js"></script>
     <script src="~/Scripts/App/Profil/Profil.controller.js"></script>
     <script src="~/Scripts/App/Profil/Profil.state.js"></script>
@@ -48,7 +48,7 @@
 <body ng-app="app">
 
     <!--NAVBAR-->
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" id="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand">FESB<span>bet</span></a>
@@ -62,12 +62,16 @@
         </div>
     </nav>
     <!--NAVBAR LOGIN-->
-    <nav class="navbar">
+    <nav class="navbar" id="navbarLogin">
         <div class="container-fluid">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a ui-sref="sign-in"><i class="fa fa-sign-in"></i><strong> Sign Up</strong></a></li>
                     <li><a ui-sref="registration"><i class="fa fa-user"></i><strong> Login</strong></a></li>
                 </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li><a class="UserMoney">User: Toni Buzov</a> </li>
+                <li><a class="UserMoney">Money: 1000 HRK </a> </li>
+</ul>
             </div>
 
     </nav>

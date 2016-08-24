@@ -41,7 +41,7 @@
             ]
         }
 
-        $scope.interval = 2000;
+        $scope.interval = 3000;
         $scope.noWrapSlides = false;
         $scope.active = 0;
         var currIndex = 0;
@@ -72,5 +72,6 @@
               name: "Waterpolo"
           }
         ];
+
     }
 })();

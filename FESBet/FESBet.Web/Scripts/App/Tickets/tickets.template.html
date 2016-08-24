@@ -1,23 +1,78 @@
-﻿<div class="container">
+﻿<div>
+    <script type="text/ng-template" id="ticket.html">
+                    <div class="modal-header">
+                        <h3 class="modal-title"><strong>Ticket PIN:</strong> {{ticket.pin}}</h3>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Opponents</th>
+                                    <th>Data-Time</th>
+                                    <th>Bet</th>
+                                    <th>Odd</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody  ng-repeat="match in ticket.matches" >
+                                <tr>
+                                    <td>{{match.id}}</td>
+                                    <td>{{match.name}}</td>
+                                    <td>{{match.data}} - {{match.time}}</td>
+                                    <td>{{match.bet}}</td>
+                                    <td>{{match.odd}}</td>
+                                    <td>
+                                        <i class="fa fa-times fa-2x" ng-show="checkFalse(match.statusMatch)"></i>
+                                        <i class="fa fa-check fa-2x" ng-show="checkWin(match.statusMatch)"></i>
+                                        <i class="fa fa-spinner fa-2x" ng-show="checkWait(match.statusMatch)"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p id="body_ticket"><strong>PAYIN:{{ticket.payIn}}</strong> <strong>TOTAL-ODD:{{ticket.totalOdd}}</strong> <strong>WIN:{{ticket.win}}</strong></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+                    </div>
+    </script>
+
+<div class="container">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12" id="ticket-header">
             <h2 class="page-header">Tickets</h2>
+            <p> Order by:
+                <select ng-model="ticketOrder" class="input-sm">
+                    <option selected value="data">Data</option>
+                    <option selected value="pin">Pin</option>
+                    <option selected value="win">Money</option>
+                </select>
+                Selected:
+                <select ng-model="shower" class="input-sm">
+                    <option selected value="">All</option>
+                    <option selected value="LOSE">Lose</option>
+                    <option selected value="WIN">Win</option>
+                    <option selected value="WAITING">Waiting</option>
+                </select>
+            </p>
         </div>
-        <div class="col-md-4 text-center">
+        <div class="col-md-4 text-center"  ng-repeat="ticket in tickets | orderBy:ticketOrder | filter:{status: shower}">
             <div class="thumbnail">
-                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                <img class="img-responsive" id="image_ticket" src="http://placehold.it/750x450" ng-click="open('lg',ticket.index,ticket.win)" alt="">
                 <div class="caption">
-                   <p><strong>PIN:</strong> {{pin}}</p>
-                   <p><strong>DATA:</strong> {{data}}</p>
-                   <hr id="tickets" />
+                    <p><strong>PIN:</strong> {{ticket.pin}}</p> 
+                    <p><strong>MONEY:</strong> {{ticket.win}}</p>
+                    <p><strong>DATA:</strong> {{ticket.data}}</p>
+                    <hr id="tickets" />
                     <div>
-                        <p><strong>STATUS:</strong> {{status}} </p>
-                        <i class="fa fa-times fa-3x" ng-show="showLose"></i>
-                        <i class="fa fa-check fa-3x" ng-show="showWin"></i>
-                        <i class="fa fa-spinner fa-3x" ng-show="showWaiting"></i>
+                        <p><strong>STATUS:</strong> {{ticket.status}} </p>
+                        <i class="fa fa-times fa-3x" ng-show="checkFalse(ticket.status)"></i>
+                        <i class="fa fa-check fa-3x" ng-show="checkWin(ticket.status)"></i>
+                        <i class="fa fa-spinner fa-3x" ng-show="checkWait(ticket.status)"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
