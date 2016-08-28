@@ -12,11 +12,16 @@ namespace FESBet.Data.Model
     public interface IFESBetContext
     {
         IDbSet<User> Users { get; set; }
+        
     }
 
     public class FESBetContext : DbContext, IFESBetContext
     {
         public IDbSet<User> Users { get; set; }
+        public IDbSet<Ticket> Tickets { get; set; }
+        public IDbSet<Pair> Pairs { get; set; }
+        public IDbSet<Event> Events { get; set; }
+
 
         public FESBetContext(DbConnection connection)
             : base(connection, true)

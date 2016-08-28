@@ -24,7 +24,9 @@ namespace FESBet.Web.Controllers.API
         [Route("test")]
         public IEnumerable<User> Test()
         {
-            return _usersRepository.GetAllUsers();
+            return null;
         }
+
+
     }
 }

@@ -23,6 +23,7 @@
     @*My scripts*@
     <script src="~/Scripts/App/app.module.js"></script>
     <script src="~/Scripts/App/app.config.js"></script>
+    <script src="~/Scripts/Vendor/angular-local-storage.min.js"></script>
 
     <script src="~/Scripts/App/Home/home.controller.js"></script>
     <script src="~/Scripts/App/Home/home.state.js"></script>
@@ -65,12 +66,14 @@
     <nav class="navbar" id="navbarLogin">
         <div class="container-fluid">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a ui-sref="sign-in"><i class="fa fa-sign-in"></i><strong> Sign Up</strong></a></li>
-                    <li><a ui-sref="registration"><i class="fa fa-user"></i><strong> Login</strong></a></li>
+                    <li ng-show="!loggedUser"><a ui-sref="sign-in"><i class="fa fa-sign-in"></i><strong> Sign Up</strong></a></li>
+                    <li><a ui-sref="registration" ng-show="!loggedUser"><i class="fa fa-user"></i><strong> Login</strong></a></li>
+                    <li><a ui-sref="#" ng-show="!!loggedUser"><i class="fa fa-user"></i><strong> Logout</strong></a></li>
+
                 </ul>
             <ul class="nav navbar-nav navbar-left">
-                <li><a class="UserMoney">User: Toni Buzov</a> </li>
-                <li><a class="UserMoney">Money: 1000 HRK </a> </li>
+                <li><a class="UserMoney">User: {{loggedUser.FirstName}}&nbsp;{{loggedUser.LastName}}</a> </li>
+                <li><a class="UserMoney">Money: {{loggedUser.Money}} HRK </a> </li>
 </ul>
             </div>
 

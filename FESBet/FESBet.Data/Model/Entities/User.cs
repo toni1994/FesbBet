@@ -32,5 +32,7 @@ namespace FESBet.Data.Model.Entities
 
         [Required]
         public string Password { get; set; }
+
+        public virtual ICollection<Ticket> Tickets { get; set; }
     }
 }

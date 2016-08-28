@@ -178,8 +178,10 @@
     <Compile Include="App_Start\IoCConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\API\LoginController.cs" />
     <Compile Include="Controllers\API\UsersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CookieLoginService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -200,9 +202,6 @@
     <Content Include="Content\Pictures\Waterpolo.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Scripts\App\app.module.js" />
     <Content Include="Scripts\App\app.config.js" />
     <Content Include="Scripts\App\Bet\Bet.controller.js" />
@@ -231,6 +230,7 @@
     <Content Include="Scripts\App\Tickets\tickets.template.html" />
     <Content Include="Scripts\Vendor\angular-animate.js" />
     <Content Include="Scripts\Vendor\angular-animate.min.js" />
+    <Content Include="Scripts\Vendor\angular-local-storage.min.js" />
     <Content Include="Scripts\Vendor\angular-message-format.js" />
     <Content Include="Scripts\Vendor\angular-message-format.min.js" />
     <Content Include="Scripts\Vendor\angular-messages.js" />

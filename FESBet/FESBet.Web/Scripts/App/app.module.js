@@ -1,5 +1,5 @@
 ﻿(function () {
     'use strict';
 
-    angular.module("app", ['ui.router', "ngAnimate", "ui.bootstrap"]);
+    angular.module("app", ['ui.router', "ngAnimate", "ui.bootstrap", 'LocalStorageModule']);
 })();

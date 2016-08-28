@@ -63,6 +63,9 @@
   <ItemGroup>
     <Compile Include="DevelopmentDatabaseInitializer.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Entities\Event.cs" />
+    <Compile Include="Model\Entities\Pair.cs" />
+    <Compile Include="Model\Entities\Ticket.cs" />
     <Compile Include="Model\Entities\User.cs" />
     <Compile Include="Model\FESBetContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
