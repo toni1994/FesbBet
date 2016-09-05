@@ -28,5 +28,14 @@ namespace FESBet.Web.Controllers.API
         }
 
 
+        [HttpPost]
+        [Route("create")]
+        public IHttpActionResult Create(User user)
+        {
+            _usersRepository.Add(user);
+
+            return Ok();
+        }
+
     }
 }

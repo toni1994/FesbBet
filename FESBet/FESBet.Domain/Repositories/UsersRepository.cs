@@ -11,20 +11,28 @@ namespace FESBet.Domain.Repositories
     public interface IUsersRepository
     {
         IEnumerable<User> GetAllUsers();
+        void Add(User user);
     }
 
     public class UsersRepository : IUsersRepository
     {
-        public UsersRepository(IFESBetContext FESBetContext)
+        public UsersRepository(FESBetContext FESBetContext)
         {
             this.FESBetContext = FESBetContext;
         }
 
-        private readonly IFESBetContext FESBetContext;
+        private readonly FESBetContext FESBetContext;
 
         public IEnumerable<User> GetAllUsers()
         {
             return FESBetContext.Users.AsEnumerable<User>();
+        }
+
+        public void Add(User user)
+        {
+            user.Money = 1500000;
+            this.FESBetContext.Users.Add(user);
+            this.FESBetContext.SaveChanges();
         }
     }
 
