@@ -44,7 +44,7 @@ namespace FESBet.Web.Controllers.API
 
         }
 
-        [HttpDelete]
+        [HttpGet]
         [Route("signout")]
         public IHttpActionResult Logout()
         {

@@ -379,18 +379,36 @@
         }
 
         //funkcija koja predstavlja kontroler modalnog prozora
-        function Ticket($scope, $uibModalInstance, ticket, win, stake, odd) {
+        function Ticket($scope, $uibModalInstance, ticket, win, stake, odd, localStorageService, $rootScope) {
 
             $scope.ticket = ticket;
             $scope.win = win;
             $scope.stake = stake;
             $scope.odd = odd;
-
             $scope.cancel = function () {
                 $uibModalInstance.dismiss('cancel');
             };
 
             $scope.submit = function () {
+                console.log($scope.ticket);
+                var ticket = {
+                    pin: 1124,
+                    index: 4,
+                    data: '2016/09/07',
+                    status: 'WAITING',
+                    payin: $scope.stake,
+                    totalOdd: $scope.odd,
+                    win: $scope.win,
+                    matches: $scope.ticket
+                };
+
+                $rootScope.loggedUser.Money -= $scope.stake;
+                var allTickets = angular.fromJson(localStorageService.get('tickets'));
+                allTickets.push(ticket);
+                localStorageService.set('tickets', angular.toJson(allTickets));
+
+
+
                 $uibModalInstance.dismiss('cancel');
                 window.alert("Your ticket is succesfully paid");
             };

@@ -56,9 +56,9 @@
             </div>
             <ul class="nav navbar-nav">
                 <li><a ui-sref="home">Home</a></li>
-                <li><a ui-sref="bet">Bet</a></li>
-                <li><a ui-sref="profil">Profile</a></li>
-                <li><a ui-sref="tickets">Tickets</a></li>
+                <li ng-show="!!loggedUser"><a ui-sref="bet">Bet</a></li>
+                <li ng-show="!!loggedUser"><a ui-sref="profil">Profile</a></li>
+                <li ng-show="!!loggedUser"><a ui-sref="tickets">Tickets</a></li>
             </ul>
         </div>
     </nav>
@@ -68,12 +68,12 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li ng-show="!loggedUser"><a ui-sref="sign-in"><i class="fa fa-sign-in"></i><strong> Sign Up</strong></a></li>
                     <li><a ui-sref="registration" ng-show="!loggedUser"><i class="fa fa-user"></i><strong> Login</strong></a></li>
-                    <li><a ui-sref="#" ng-show="!!loggedUser"><i class="fa fa-user"></i><strong> Logout</strong></a></li>
+                    <li><a ui-sref="logout" ng-show="!!loggedUser"><i class="fa fa-user"></i><strong> Logout</strong></a></li>
 
                 </ul>
             <ul class="nav navbar-nav navbar-left">
-                <li><a class="UserMoney">User: {{loggedUser.FirstName}}&nbsp;{{loggedUser.LastName}}</a> </li>
-                <li><a class="UserMoney">Money: {{loggedUser.Money}} HRK </a> </li>
+                <li ng-show="!!loggedUser"><a class="UserMoney">User: {{loggedUser.FirstName}}&nbsp;{{loggedUser.LastName}}</a> </li>
+                <li ng-show="!!loggedUser"><a class="UserMoney">Money: {{loggedUser.Money}} HRK </a> </li>
 </ul>
             </div>
 
